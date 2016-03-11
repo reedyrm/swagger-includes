@@ -19,7 +19,7 @@
     "mocha-teamcity-reporter": "^1.0.0",
     "teamcity-service-messages": "^0.1.6"
   },
-  "version": "0.1.15",
+  "version": "0.0.1",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.3.17",
