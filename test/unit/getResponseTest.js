@@ -29,6 +29,24 @@ describe('When getting response', function () {
 
     expect(access.type).to.be.equal('string');
   });
+  it('should return 302 response by string', () => {
+    let responseObject = module.getResponse('302');
+    let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
+    let locationHeader = getHeaderByName('Location', responseObject);
+    let xMatCorrelation = getHeaderByName(headerXMatCorrName, responseObject);
+    let access = getHeaderByName(headerAccessName, responseObject);
+    expect(responseObject.description).to.be.equal('Redirect');
+
+    expect(xVolCorrelation.type).to.be.equal('string');
+    expect(xMatCorrelation.type).to.be.equal('string');
+
+    expect(xVolCorrelation.description).to.be.equal(theCorrelationId);
+    expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
+
+    expect(access.type).to.be.equal('string');
+
+    expect(locationHeader.type).to.be.equal('string');
+  });
   it('should return 401 response by string', () => {
     let responseObject = module.getResponse('401');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
