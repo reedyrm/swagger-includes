@@ -10,6 +10,7 @@ module.exports = function() {
   let responseLookup = lookupBuilder(path.resolve(__dirname, 'responses'));
   let awsResponseLookup = lookupBuilder(path.resolve(__dirname, 'awsResponses'));
   let headerLookup = lookupBuilder(path.resolve(__dirname, 'headers'));
+  let awsLambdaResponseLookup = lookupBuilder(path.resolve(__dirname, 'awsLambdaResponses'));
 
   return {
     constants: constants,
@@ -21,6 +22,9 @@ module.exports = function() {
     },
     getAwsResponse: (responseToGet) => {
       return awsResponseLookup[responseToGet];
+    },
+    getAwsLambdaResponse: (responseToGet) => {
+      return awsLambdaResponseLookup[responseToGet];
     },
     getHeader: (headerToGet) => {
       return headerLookup[headerToGet];
