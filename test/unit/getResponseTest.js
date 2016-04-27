@@ -1,5 +1,6 @@
 "use strict";
-var expect = require('chai').expect;
+var chai = require('chai');
+var expect = chai.expect;
 var module = require('../../src/index.js');
 
 let getHeaderByName = function (name, responseObject) {
@@ -28,7 +29,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+    
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 302 response by string', () => {
     let responseObject = module.getResponse('302');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -46,7 +51,11 @@ describe('When getting response', function () {
     expect(access.type).to.be.equal('string');
 
     expect(locationHeader.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 401 response by string', () => {
     let responseObject = module.getResponse('401');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -62,7 +71,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 403 response by string', () => {
     let responseObject = module.getResponse('403');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -78,7 +91,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 404 response by string', () => {
     let responseObject = module.getResponse('404');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -94,7 +111,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 405 response by string', () => {
     let responseObject = module.getResponse('405');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -110,7 +131,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 406 response by string', () => {
     let responseObject = module.getResponse('406');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -126,7 +151,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 409 response by string', () => {
     let responseObject = module.getResponse('409');
 
@@ -142,7 +171,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 500 response by string', () => {
     let responseObject = module.getResponse('500');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -158,7 +191,11 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
+
   it('should return 501 response by string', () => {
     let responseObject = module.getResponse('501');
     let xVolCorrelation = getHeaderByName(headerXVolCorrName, responseObject);
@@ -174,5 +211,8 @@ describe('When getting response', function () {
     expect(xMatCorrelation.description).to.be.equal(theCorrelationIdenty);
 
     expect(access.type).to.be.equal('string');
+
+    expect(responseObject.schema.type).to.equal("string");
+    expect(responseObject.schema.description).to.equal("nothing");
   });
 });

@@ -14,5 +14,9 @@ module.exports = {
     "Access-Control-Allow-Origin": {
       "type": "string"
     }
+  },
+  "schema": {
+    "type": "string",
+    "description": "nothing"
   }
 };

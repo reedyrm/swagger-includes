@@ -17,5 +17,9 @@ module.exports = {
     "Location": {
       "type": "string"
     }
+  },
+  "schema": {
+    "type": "string",
+    "description": "nothing"
   }
 };
